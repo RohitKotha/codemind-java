@@ -1,31 +1,30 @@
 import java.util.*;
-
-public class Rohit {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        long n = sc.nextInt();
-        
-        for (long i = 0; i < n; i++) {
-            long x = sc.nextInt();
-            long y = sc.nextInt();
-            boolean found = false;
+public class rohit{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextInt();
+        for(long i=1;i<=n;i++){
+            long x,y,c=0;
+            x=sc.nextInt();
+            y=sc.nextInt();
             
-            for (long j = 0; j <= 1000; j++) {  // You can adjust the upper limit as needed
-                if ((y) % (x) == 0) {
+            for(long j=0;j<=1000;j++){
+                if((y)%(x)==0){
                     System.out.println("YES");
-                    found = true;
+                    c++;
                     break;
                 }
-                else{
-                    long w=y%x;
-                    y+=w;
-                    x+=w;
-                }
+            
+            else{
+                long w=y%x;
+                y=y+w;
+                x=x+w;
             }
             
-            if (!found) {
+        }
+            if(c==0){
                 System.out.println("NO");
             }
         }
-    }
+        }
 }
